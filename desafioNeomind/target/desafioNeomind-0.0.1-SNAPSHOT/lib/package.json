@@ -1,0 +1,27 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/animation": "^4.0.0-beta.8",
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-aria": "^1.6.9",
+    "angular-grid": "^1.16.1",
+    "angular-messages": "^1.6.9",
+    "angular-resource": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "angular-toastr": "^2.1.1",
+    "angular-touch": "^1.6.9",
+    "angular-ui-grid": "^4.4.3",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "ui-grid": "0.0.0"
+  }
+}

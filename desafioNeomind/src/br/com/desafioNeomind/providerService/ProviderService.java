@@ -1,12 +1,13 @@
 package br.com.desafioNeomind.providerService;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import br.com.desafioNeomind.core.Managed;
 import br.com.desafioNeomind.pojo.ProviderPojo;
 import br.com.desafioNeomind.providerRepository.ProviderRepository;
-import javax.faces.bean.RequestScoped;
 
 @RequestScoped
 @Named
