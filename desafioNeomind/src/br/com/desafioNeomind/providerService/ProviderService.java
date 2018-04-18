@@ -2,7 +2,6 @@ package br.com.desafioNeomind.providerService;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.transaction.Transactional;
 
 import br.com.desafioNeomind.core.Managed;
 import br.com.desafioNeomind.pojo.ProviderPojo;

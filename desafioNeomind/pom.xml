@@ -63,7 +63,7 @@
 		</dependencies>
 	</dependencyManagement>
 	
-	<dependencies>
+<dependencies>
 
 		<!-- REST -->
 		<dependency>
@@ -118,10 +118,29 @@
 			<version>2.0.1</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>5.2.2.Final</version>
+		   <groupId>org.slf4j</groupId>
+		   <artifactId>slf4j-api</artifactId>
+		   <version>1.7.25</version>
+		</dependency>
+		
+		<dependency>
+	        <groupId>org.glassfish.jersey.core</groupId>
+	        <artifactId>jersey-server</artifactId>
+	        <version>2.25.1</version>
+	    </dependency>
+		
+		<dependency>
+	        <groupId>org.glassfish.jersey.containers</groupId>
+	        <artifactId>jersey-container-servlet</artifactId>
+	        <version>2.25.1</version>
+	    </dependency>
+	
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.2.10.Final</version>
 		</dependency>
 
 		<dependency>
@@ -136,7 +155,13 @@
 			<artifactId>reflections</artifactId>
 			<version>0.9.9-RC2</version>
 		</dependency>
-
+		
+		<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
+		<dependency>
+		    <groupId>org.eclipse.persistence</groupId>
+		    <artifactId>eclipselink</artifactId>
+		  <version>2.5.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -184,6 +209,7 @@
 			<version>20160810</version>
 		</dependency>
 
+
 		<!-- CDI -->
 
 		<dependency>
@@ -204,6 +230,21 @@
 			<artifactId>jersey-media-json-jackson</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl -->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-core-asl</artifactId>
+		    <version>1.9.13</version>
+		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-mapper-asl</artifactId>
+		    <version>1.9.13</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>

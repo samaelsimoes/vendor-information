@@ -19,13 +19,14 @@ public class providerRest extends UtilRest {
 	@Inject
 	private ProviderService providerService;
 	private Gson gson = new Gson();
-	
+		
 	@POST
 	@Consumes("application/json; charset=UTF-8")
 	@Produces("application/json; charset=UTF-8")
 	public Response get(String provider) {
 		try {
 			
+			System.out.println(provider);
 			ProviderPojo objProbider = this.gson.fromJson(provider, ProviderPojo.class);				
 			providerService.save(objProbider);
 			
