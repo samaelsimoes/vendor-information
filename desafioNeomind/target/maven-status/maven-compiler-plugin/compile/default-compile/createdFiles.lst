@@ -1,0 +1,12 @@
+br\com\desafioNeomind\providerRepository\ProviderRepository.class
+br\com\desafioNeomind\providerException\PrincipalException.class
+br\com\desafioNeomind\pojo\ProviderPojo.class
+br\com\desafioNeomind\providerService\ProviderService.class
+br\com\desafioNeomind\providerEntity\ProviderEntity.class
+br\com\desafioNeomind\providerRest\providerRest.class
+br\com\desafioNeomind\providerUtil\UtilRest.class
+br\com\desafioNeomind\providerUtil\RestResponse.class
+br\com\desafioNeomind\core\Managed.class
+br\com\desafioNeomind\providerEntity\GenericEntity.class
+br\com\desafioNeomind\transaction\Transacional.class
+br\com\desafioNeomind\providerUtil\ObjectException.class
