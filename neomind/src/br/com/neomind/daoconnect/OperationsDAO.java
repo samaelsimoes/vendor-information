@@ -93,9 +93,7 @@ public class OperationsDAO<T> extends ConnectionDAO<T>{
 		this.count++;
 	}
 	
-	public void setAnds() throws GlobalException{
-		
-	}
+	public void setAnds() throws GlobalException{}
 	
 	public void setQuery(){
 		this.queryStr = select+queryOp;
@@ -183,9 +181,12 @@ public class OperationsDAO<T> extends ConnectionDAO<T>{
 		getSelectString();
 		int listaSize = this.listaStr.size();
 		this.queryStr = this.select+" AND "+this.campos.get(this.count)+" BETWEEN ";
+		
 		for(String val: this.listaStr){
+			
 			this.queryStr+="'"+val+"'";
 			contIt++;
+			
 			if(contIt < listaSize)
 				this.queryStr+=" AND ";
 		}
@@ -208,5 +209,4 @@ public class OperationsDAO<T> extends ConnectionDAO<T>{
 		em.remove(obj);
 		em.getTransaction().commit();
 	}
-
 }

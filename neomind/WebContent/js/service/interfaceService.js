@@ -4,6 +4,7 @@
  */
 
 app.factory("InterfaceService", function($resource) {
+
 	return $resource("/neomind/rest/provider/", null, {
 		update: {
 			method: "PUT"

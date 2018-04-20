@@ -1,4 +1,3 @@
-
 package br.com.neomind.factory.date;
 
 import java.text.DateFormat;
@@ -47,6 +46,4 @@ public class DateFactory {
 						"yyyy-MM-dd HH:mm:ss","HH:mm","HH:mm:ss" };
 		return fmts[dthrBr.getIndex()];
 	}
-	
-
 }

@@ -1,28 +1,21 @@
 package br.com.neomind.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "neomind")
 public class Provider {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column
 	private String name;
-	
-	@Column
 	private String email;	
-	
-	@Column
-	private String comment;	
-	
-	@Column
 	private String cnpj;
+	private String comment;
 	
 	 public int getId() {
         return id;
@@ -44,18 +37,17 @@ public class Provider {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getComment() {
-		return email;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
 	
 	public String getCnpj() {
 		return cnpj;
 	}
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 }
