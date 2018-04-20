@@ -31,7 +31,7 @@
 			</div>
 			
 			<div class="col-sm-2 col-md-2">							
-				<input type="text" class="validate" ng-model='filterValue' id="search" ng-change='filter()'>	    		
+				<input type="text" class="form-control" ng-model='filterValue' id="search" ng-change='filter()'>	    		
 	    	</div>
 	    	
 	    	<div class="col-sm-2 col-md-2">			
@@ -98,17 +98,17 @@
 								<div class="form-group col-sm-12 col-md-12">
 									<label for="comment">Comentario:</label>												
 									
-									<textarea placheolder="Comentario" id="comment1" name="comment" required ng-maxlength="500" type="text" class="form-control" ng-model="gridApi.selection.getSelectedRows()[0].comment"></textarea>
+									<textarea placheolder="Comentario" id="comment1" name="comment" required ng-maxlength="200" type="text" class="form-control" ng-model="gridApi.selection.getSelectedRows()[0].comment"></textarea>
 							    	
 							    	<span class="help-block custom-fonts-alert" ng-class="error" ng-show="interfaceEdit.comment.$error.required">Campo obrigatório</span>
-					       			<span class="help-block custom-fonts-alert" ng-show="interfaceEdit.comment.$error.maxlength">Apenas é possivel cadastrar com o maximo 500 caracteres!</span>	
+					       			<span class="help-block custom-fonts-alert" ng-show="interfaceEdit.comment.$error.maxlength">Apenas é possivel cadastrar com o maximo 200 caracteres!</span>	
 								</div>								
 							</div>								
 						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-warning" data-dismiss="modal">Sair</button>	
-						<button type="button" class="btn btn-success custom-aling-buttonAdd-grid"  ng-click="editProvider(provider, $index)" ng-disabled="interfaceEdit.$invalid">Editar</button>							
+						<button type="button" class="btn btn-success custom-aling-buttonAdd-grid"  ng-click="editProvider(provider, $index)" ng-disabled="interfaceEdit.$invalid" data-dismiss="modal">Editar</button>							
 					</div>
 				</div>
 			</div>
@@ -131,86 +131,87 @@
 							</div>
 						</div>					
 					</div>
+					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-warning" data-dismiss="modal">Sair</button>	
-						<button type="button" class="btn btn-success custom-aling-buttonAdd-grid" ng-click="aceptdelet()">Sim</button>							
+						<button type="button" class="btn btn-success custom-aling-buttonAdd-grid" ng-click="aceptdelet()" data-dismiss="modal">Sim</button>							
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		<!-- MODAL ADD -->
-		<div class="modal fade bd-example-modal-lg" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAdd" aria-hidden="true">
-			<div class="modal-dialog modal-lg" role="document">
-		    	<div class="modal-content">
-		      		<div class="modal-header">
-		      		
-		        		<h5 class="modal-title" id="modalAdd">Cadastrar informações do fornecedor</h5>
-		        		
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-		      		</div>			      		
-		      		
-					<div class="modal-body" ng-controller="InterfaceControllerAdd">
-						<form name="providerFormAdd" ng-submit="save(provider)">
-							<div id="content">				
-							
-							<div class="row">
-								<div class="form-group col-sm-12 col-md-6">					
-									<label for="name">Nome:</label>	
-									
-									<input placheolder="Nome" id="name" name="name" required ng-maxlength="255" type="text" class="form-control" ng-model="provider.name">
-		
-									<span class="help-block custom-fonts-alert" ng-class="error" ng-show="providerFormAdd.name.$error.required">Campo obrigatório</span>
-						       		<span class="help-block custom-fonts-alert" ng-show="providerFormAdd.name.$error.maxlength">Limite de caracteres ultrapassados!</span>		
-								</div>
-								<div class="form-group col-sm-12 col-md-6">
-									<label for="email">E-mail:</label>	
-									
-									<input placheolder="E-mail" id="email" name="email" required ng-maxlength="100" type="text" class="form-control" ng-model="provider.email">									
-									
-							    	<span class="help-block custom-fonts-alert" ng-class="error" ng-show="providerFormAdd.email.$error.required">Campo obrigatório</span>
-					       			<span class="help-block custom-fonts-alert" ng-show="providerFormAdd.email.$error.maxlength">Apenas é possivel cadastrar com o maximo 100 caracteres!</span>	
-								</div>								
-							</div>
-							<div class="row">
-								<div class="form-group col-sm-12 col-md-12">
-									<label for="cnpj">CNPJ:</label>	
-									
-									<input placheolder="Cnpj" id="cnpj" name="cnpj" required ng-maxlength="14" type="text" class="form-control" ng-model="provider.cnpj">						
-																		    	
-							    	<span class="help-block custom-fonts-alert" ng-class="error" ng-show="providerFormAdd.cnpj.$error.required">Campo obrigatório</span>
-					       			<span class="help-block custom-fonts-alert" ng-show="providerFormAdd.cnpj.$error.maxlength">Apenas é possivel cadastrar com o maximo 14 caracteres!</span>	
-								</div>
-							</div>
-							
-							<div class="row">										
-								<div class="form-group col-sm-12 col-md-12">
-									<label for="comment">Comentario:</label>												
-									
-									<textarea placheolder="Comentario" id="comment" name="comment" required ng-maxlength="500" type="text" class="form-control" ng-model="provider.comment"></textarea>
-							    	
-							    	<span class="help-block custom-fonts-alert" ng-class="error" ng-show="providerFormAdd.comment.$error.required">Campo obrigatório</span>
-					       			<span class="help-block custom-fonts-alert" ng-show="providerFormAdd.comment.$error.maxlength">Apenas é possivel cadastrar com o maximo 500 caracteres!</span>	
-								</div>								
-							</div>														
-							
-							<div class="row">
-								<div class="col col-sm-2 col-md-2">										
-									<button type="button" class="btn btn-success" name="action" ng-click="save(provider)" ng-disabled="providerFormAdd.$invalid">Salvar</button>
-								</div>
-								<div class="col col-sm-2 col-md-2">
-								    <button type="button" class="btn btn-warning" data-dismiss="modal">Sair</button>										
-								</div>
-							</div>
-						</form>		
-					</div>	
-		    	</div>
-		  	</div>
-		</div>
-	<!--  END MODAL ADD -->			
+		</div>	
 	</section>
+	
+	<!-- MODAL ADD -->
+	<div class="modal fade bd-example-modal-lg" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAdd" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	      		
+	        		<h5 class="modal-title" id="modalAdd">Cadastrar informações do fornecedor</h5>
+	        		
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+	      		</div>			      		
+	      		
+				<div class="modal-body" ng-controller="InterfaceControllerAdd">
+					<form name="providerFormAdd" ng-submit="save(provider)">
+						<div id="content">				
+						
+						<div class="row">
+							<div class="form-group col-sm-12 col-md-6">					
+								<label for="name">Nome:</label>	
+								
+								<input placheolder="Nome" id="name" name="name" required ng-maxlength="255" type="text" class="form-control" ng-model="provider.name">
+	
+								<span class="help-block custom-fonts-alert" ng-class="error" ng-show="providerFormAdd.name.$error.required">Campo obrigatório</span>
+					       		<span class="help-block custom-fonts-alert" ng-show="providerFormAdd.name.$error.maxlength">Limite de caracteres ultrapassados!</span>		
+							</div>
+							<div class="form-group col-sm-12 col-md-6">
+								<label for="email">E-mail:</label>	
+								
+								<input placheolder="E-mail" id="email" name="email" required ng-maxlength="100" type="text" class="form-control" ng-model="provider.email">									
+								
+						    	<span class="help-block custom-fonts-alert" ng-class="error" ng-show="providerFormAdd.email.$error.required">Campo obrigatório</span>
+				       			<span class="help-block custom-fonts-alert" ng-show="providerFormAdd.email.$error.maxlength">Apenas é possivel cadastrar com o maximo 100 caracteres!</span>	
+							</div>								
+						</div>
+						<div class="row">
+							<div class="form-group col-sm-12 col-md-12">
+								<label for="cnpj">CNPJ:</label>	
+								
+								<input placheolder="Cnpj" id="cnpj" name="cnpj" required ng-maxlength="14" type="number" class="form-control" ng-model="provider.cnpj">						
+																	    	
+						    	<span class="help-block custom-fonts-alert" ng-class="error" ng-show="providerFormAdd.cnpj.$error.required">Campo obrigatório</span>
+				       			<span class="help-block custom-fonts-alert" ng-show="providerFormAdd.cnpj.$error.maxlength">Apenas é possivel cadastrar com o maximo 14 caracteres!</span>	
+							</div>
+						</div>
+						
+						<div class="row">										
+							<div class="form-group col-sm-12 col-md-12">
+								<label for="comment">Comentario:</label>												
+								
+								<textarea placheolder="Comentario" id="comment" name="comment" required ng-maxlength="200" type="text" class="form-control" ng-model="provider.comment"></textarea>
+						    	
+						    	<span class="help-block custom-fonts-alert" ng-class="error" ng-show="providerFormAdd.comment.$error.required">Campo obrigatório</span>
+				       			<span class="help-block custom-fonts-alert" ng-show="providerFormAdd.comment.$error.maxlength">Apenas é possivel cadastrar com o maximo 200 caracteres!</span>	
+							</div>								
+						</div>														
+						
+						<div class="row">
+							<div class="col col-sm-2 col-md-2">										
+								<button type="button" class="btn btn-success" name="action" ng-click="save(provider)" ng-disabled="providerFormAdd.$invalid" data-dismiss="modal">Salvar</button>
+							</div>
+							<div class="col col-sm-2 col-md-2">
+							    <button type="button" class="btn btn-warning" data-dismiss="modal">Sair</button>										
+							</div>
+						</div>
+					</form>		
+				</div>	
+	    	</div>
+	  	</div>
+	</div>
+	<!--  END MODAL ADD -->		
 </body>
 	<link href="lib/node_modules/angular-ui-grid/ui-grid.css" rel="stylesheet" type="text/css"/>
 		

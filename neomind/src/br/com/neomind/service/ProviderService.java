@@ -36,8 +36,7 @@ public class ProviderService {
 	}
 	
 	public void edit() {		
-		Provider provider = new ProviderDAO(this.provider.getId()).findId();
-		new ProviderDAO(provider).update();
+		new ProviderDAO(this.provider).update();
 	}
 	
 	public void excluir() {

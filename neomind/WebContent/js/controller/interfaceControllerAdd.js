@@ -7,19 +7,24 @@ app.controller('InterfaceControllerAdd', [ '$scope', '$rootScope', '$location', 
 	  	
 	$scope.save = function(value) {
 				
-		if ( value == undefined || value== "" ){			
-			console.log("Gentileza preencher os campos obrigatório");	
+		if ( value == undefined || value== "" ){
+			
+			bootbox.alert({
+			    message: "Gentileza preencher os campos obrigatório!",
+			    className: 'bb-alternate-modal'
+			});
 		}else if( value != undefined || value != "" ){			
-			InterfaceService.save(value, function(response) {				
+			InterfaceService.save(value, function(response) {		
 				
-				console.log(value);
-				console.log(response);
-
 				bootbox.alert({
-				    message: "This is an alert with an additional class!",
+				    message: "Cadastro realizado com sucesso!",
 				    className: 'bb-alternate-modal'
 				});
+				
 				$scope.providers = null;
+				setTimeout(function(){
+  	    	         location.reload();
+  	    	    }, 2000);
 			}, function(err){			
 				console.log( 'Erro ' + err.data);
 			})

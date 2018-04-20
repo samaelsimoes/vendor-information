@@ -76,13 +76,22 @@ app.controller("InterfaceController", ["$scope", "$http", "$log","$rootScope", "
 		    });
 		};
 		
+		//-- end load 
+		$scope.editProvider = function ( e, t ) {			
+			var row = $scope.rows[0].entity;
+			$scope.update( row );
+		};
+		
 		//---- row update grid
 		$scope.update = function ( row ) {
 			InterfaceService.update( row, function( response ) {			
 				$scope.load();
-				window.setTimeout(function() {
-					location.reload();
-			    }, 2000);
+					
+				bootbox.alert({
+				    message: "Editado com sucesso!",
+				    className: 'bb-alternate-modal'
+				});
+				
 			}, function (err) {	
 				toastr.error( 'Erro ' + err.data);
 			})
@@ -92,10 +101,7 @@ app.controller("InterfaceController", ["$scope", "$http", "$log","$rootScope", "
 	    	
 	    	var rows = $scope.gridApi.selection.getSelectedRows();
 	    	var daterowsid = [];
-	    	
-	    	console.log("rows");
-	    	console.log(rows);
-	        
+	    		        
 	    	for (var i=0; i < rows.length; i++) {
 	        	daterowsid.push(rows[i].id);
 	        }
@@ -109,7 +115,11 @@ app.controller("InterfaceController", ["$scope", "$http", "$log","$rootScope", "
 	    	    	console.log(ids);
 	    	InterfaceService.remove({ids: t}, function(response) {
 	    		
-				console.log("Excluido com sucesso! ");
+	    		bootbox.alert({
+				    message: "Excluido com sucesso!",
+				    className: 'bb-alternate-modal'
+				});
+	    		
 				$scope.load();
 	    	}), function(err) {
 	    		    		

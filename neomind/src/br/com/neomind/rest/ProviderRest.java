@@ -29,7 +29,7 @@ public class ProviderRest extends ObjMapper{
 	@Consumes("application/*")
 	public Response add(String providerObj) throws GlobalException {
 		try {
-			
+			System.out.println(providerObj);
 			Provider provider = new ProviderFactory(providerObj).getProvider();
 			
 			if ( provider != null ) {
